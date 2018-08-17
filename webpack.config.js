@@ -12,8 +12,10 @@ module.exports = {
             {
                 loader: 'babel-loader',
                 test: path.join(__dirname, 'es6'),
+                exclude:"/node_modules/",
                 query: {
-                  presets: 'es2015',
+                  presets: ['env','stage-1'],
+                  plugins: ['transform-decorators-legacy','transform-decorators', ["transform-runtime",{"polyfill":true}]]
                 },
             }
         ]
